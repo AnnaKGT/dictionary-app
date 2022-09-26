@@ -1,8 +1,14 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./Dictionary.css";
 
 export default function Dictionary() {
   const [word, setWord] = useState("");
+  const [dictionary, setDictionary] = useState({});
+
+  function searchingWord(response) {
+    console.log(response.data);
+  }
 
   function updateWord(event) {
     setWord(event.target.value);
@@ -10,7 +16,8 @@ export default function Dictionary() {
 
   function Searching(event) {
     event.preventDefault();
-    alert(`${word}`);
+    let apiCall = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+    axios.get(apiCall).then(searchingWord);
   }
 
   return (
@@ -26,7 +33,7 @@ export default function Dictionary() {
           />
 
           <span className="input-group-text btn-searching" onClick={Searching}>
-            <i className="fa-solid fa-magnifying-glass-location"></i>
+            <i className="fa-solid fa-magnifying-glass"></i>
           </span>
         </div>
       </form>
