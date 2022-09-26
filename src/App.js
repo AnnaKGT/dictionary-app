@@ -30,7 +30,7 @@ function App() {
           </a>{" "}
           and is{" "}
           <a
-            href="https://github.com/AnnaKGT/weather-app_react_v2"
+            href="https://github.com/AnnaKGT/dictionary-app"
             target="_blank"
             rel="noopener noreferrer"
           >

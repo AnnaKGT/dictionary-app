@@ -2,3 +2,11 @@
   margin: 20px 0;
   text-align: start;
 }
+
+.Results h1 {
+  font-size: 28px;
+}
+
+.Results h2 {
+  font-size: 18px;
+}

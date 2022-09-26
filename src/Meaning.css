@@ -1,0 +1,17 @@
+.Meaning p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.Meaning__partOfSpeech {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--font-color);
+}
+
+.Meaning__example {
+  padding: 0 36px 6px;
+  font-style: italic;
+  color: var(--primary-color);
+  opacity: 0.7;
+}

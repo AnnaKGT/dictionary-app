@@ -4,11 +4,15 @@ import Meaning from "./Meaning";
 import "./Results.css";
 
 export default function Results(props) {
-  //   console.log(props.meanings.meanings);
+  console.log(props.meanings);
   if (Object.keys(props.meanings).length > 0) {
     return (
       <div className="Results">
-        <h1 className="text-capitalize">{props.meanings.word}</h1>
+        <div>
+          <h1 className="text-capitalize me-4">{props.meanings.word}</h1>
+          <h2> {props.meanings.phonetic}</h2>
+        </div>
+
         {props.meanings.meanings.map(function (meaning, index) {
           return (
             <div key={index}>
