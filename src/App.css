@@ -1,14 +1,35 @@
+:root {
+  --primary-color: #0c3030;
+  --light-background: white;
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
 .App {
+  background-color: var(--light-background);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 900px;
   text-align: center;
 }
 
 .App-header {
-  background-color: #0c3030;
-  min-height: 100vh;
+  font-size: 52px;
+  font-style: italic;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--primary-color);
+}
+
+.App-footer {
+  font-size: 12px;
+}
+
+.App-footer a {
+  color: var(--primary-color);
 }

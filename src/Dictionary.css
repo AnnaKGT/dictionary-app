@@ -1,0 +1,14 @@
+.Dictionary {
+  font-size: 24px;
+  padding: 20px 0;
+}
+
+.btn-searching {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.dictionary-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: none;
+}
