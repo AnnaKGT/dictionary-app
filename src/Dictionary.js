@@ -16,6 +16,9 @@ export default function Dictionary() {
 
   function Searching(event) {
     event.preventDefault();
+
+    // documentation https://dictionaryapi.dev/
+
     let apiCall = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
     axios.get(apiCall).then(searchingWord);
   }
