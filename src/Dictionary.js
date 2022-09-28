@@ -10,7 +10,7 @@ export default function Dictionary() {
 
   function searchingWord(response) {
     // console.log(`Respons.data`);
-    // console.log(response.data);
+    console.log(response.data);
     setMeanings(response.data[0]);
   }
 
