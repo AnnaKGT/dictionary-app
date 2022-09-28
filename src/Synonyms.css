@@ -1,0 +1,11 @@
+.Synonyms {
+  display: inline;
+  font-size: 16px;
+  line-height: 1;
+  border: 1px solid var(--font-color);
+  color: var(--font-color);
+  padding: 8px 12px;
+  margin: 0 8px 4px 0;
+  border-radius: 20px;
+  background-color: var(--light-background);
+}

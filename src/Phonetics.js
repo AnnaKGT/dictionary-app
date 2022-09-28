@@ -23,8 +23,8 @@ export default function Phonetics(props) {
   }
 
   return (
-    <div>
-      <span>{props.phoneticText}</span>
+    <div className="phonetics">
+      <span className="phonetics__text">{props.phoneticText}</span>
       <i
         className="fa-solid fa-volume-low phonetics__audioIcon"
         onClick={PlaySound}

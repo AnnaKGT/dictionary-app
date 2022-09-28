@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #0c3030;
-  --light-background: white;
+  --primary-color: #0f3d3d;
+  --light-background: #fdeed2;
   --font-color: #00aaae;
 }
 
@@ -18,7 +18,8 @@ body {
 }
 
 .App-header {
-  font-size: 52px;
+  font-family: "Pacifico", cursive;
+  font-size: 84px;
   font-style: italic;
   display: flex;
   flex-direction: column;

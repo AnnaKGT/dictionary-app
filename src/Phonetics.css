@@ -4,9 +4,15 @@
   margin: 0 8px;
   padding: 8px;
   border: 1px solid;
-  border-radius: 50px;
+  border-radius: 30px;
+  transition: all 150ms ease-in-out;
+}
+
+.phonetics__text {
+  vertical-align: middle;
 }
 
 .phonetics__audioIcon:hover {
-  opacity: 0.5;
+  background-color: var(--font-color);
+  color: var(--light-background);
 }
