@@ -14,8 +14,8 @@ export default function Dictionary(props) {
   function searchingWord(response) {
     // console.log(`Respons.data`);
     // console.log(response.data);
+    // setAllmeaning(response.data);
     setMeanings(response.data[0]);
-    setAllmeaning(response.data);
   }
 
   function updateWord(event) {
