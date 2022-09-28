@@ -9,7 +9,7 @@ export default function Dictionary(props) {
   const [meanings, setMeanings] = useState({});
 
   const [loaded, setLoaded] = useState(false);
-  const [allmeanings, setAllmeaning] = useState([]);
+  // const [allmeanings, setAllmeaning] = useState([]);
 
   function searchingWord(response) {
     // console.log(`Respons.data`);
