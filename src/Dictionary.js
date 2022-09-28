@@ -1,21 +1,27 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results.js";
+import Photos from "./Photos";
 
 import "./Dictionary.css";
 
 export default function Dictionary(props) {
   const [word, setWord] = useState(props.defaultWord);
   const [meanings, setMeanings] = useState({});
+  const [photos, setPhotos] = useState(null);
 
   const [loaded, setLoaded] = useState(false);
   // const [allmeanings, setAllmeaning] = useState([]);
 
-  function searchingWord(response) {
+  function searchingDictionaryWord(response) {
     // console.log(`Respons.data`);
     // console.log(response.data);
     // setAllmeaning(response.data);
     setMeanings(response.data[0]);
+  }
+
+  function searchingPexelWord(response) {
+    setPhotos(response.data.photos);
   }
 
   function updateWord(event) {
@@ -25,7 +31,16 @@ export default function Dictionary(props) {
   function search() {
     // documentation https://dictionaryapi.dev/
     let apiCall = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
-    axios.get(apiCall).then(searchingWord);
+    axios.get(apiCall).then(searchingDictionaryWord);
+
+    const pexelsAPIKey =
+      "563492ad6f917000010000011471bb1500a341eb872ed288b6e6367a";
+    const headersPexels = { Authorization: `Bearer ${pexelsAPIKey}` };
+
+    let pexelsAPICall = `https://api.pexels.com/v1/search?query=${word}&per_page=9`;
+    axios
+      .get(pexelsAPICall, { headers: headersPexels })
+      .then(searchingPexelWord);
   }
 
   function searchingSubmit(event) {
@@ -64,6 +79,7 @@ export default function Dictionary(props) {
         </form>
 
         <Results meanings={meanings} />
+        <Photos photos={photos} />
       </div>
     );
   } else {
