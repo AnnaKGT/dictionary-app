@@ -34,7 +34,7 @@ export default function Dictionary() {
           <input
             type="search"
             className="form-control dictionary-input"
-            placeholder="Enter a word"
+            placeholder="What word do you want to look up?"
             autoComplete="off"
             onChange={updateWord}
           />
