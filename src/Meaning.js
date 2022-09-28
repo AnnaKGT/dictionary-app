@@ -7,10 +7,6 @@ export default function Meaning(props) {
   return (
     <div className="Meaning">
       <h3 className="Meaning__partOfSpeech ">{props.meaning.partOfSpeech}</h3>
-
-      {props.meaning.antonyms.map(function (antonym, index) {
-        return <span key={index}>{antonym} </span>;
-      })}
       {props.meaning.definitions.map(function (definition, index) {
         return (
           <div key={index}>
