@@ -79,7 +79,7 @@ export default function Dictionary(props) {
         </form>
 
         <Results meanings={meanings} />
-        <Photos photos={photos} />
+        <Photos photos={photos} word={word} />
       </div>
     );
   } else {
