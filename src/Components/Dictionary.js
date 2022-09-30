@@ -78,7 +78,7 @@ export default function Dictionary(props) {
           </div>
         </form>
 
-        <Results meanings={meanings} />
+        <Results meanings={meanings} word={word} />
         <Photos photos={photos} word={word} />
       </div>
     );

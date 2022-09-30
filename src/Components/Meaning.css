@@ -18,10 +18,3 @@
 .Meaning__sep {
   opacity: 10%;
 }
-
-.Meaning__example {
-  padding: 0 36px 6px;
-  font-style: italic;
-  color: var(--primary-color);
-  opacity: 0.7;
-}

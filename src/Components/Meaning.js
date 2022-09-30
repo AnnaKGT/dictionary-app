@@ -3,8 +3,10 @@ import React from "react";
 import "./Meaning.css";
 import Synonyms from "./Synonyms";
 import Antonyms from "./Antonyms";
+import Example from "./Example";
 
 export default function Meaning(props) {
+  // console.log(props);
   return (
     <div className="Meaning">
       <h3 className="Meaning__partOfSpeech ">{props.meaning.partOfSpeech}</h3>
@@ -15,7 +17,8 @@ export default function Meaning(props) {
               <i className="fa-solid fa-check Meaning__definitionCheck"></i>
               {definition.definition}
             </p>
-            <p className="Meaning__example mb-1">{definition.example}</p>
+
+            <Example example={definition.example} word={props.word} />
             <Synonyms synonyms={definition.synonyms} />
             <Antonyms antonyms={definition.antonyms} />
             <hr className="Meaning__sep" />

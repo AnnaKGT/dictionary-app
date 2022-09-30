@@ -8,7 +8,7 @@ export default function Phonetics(props) {
   let phonet_text = "";
   let phonet_audio = "";
   {
-    props.phonetics.map(function (phonetic, index) {
+    props.phonetics.map(function (phonetic) {
       if (phonetic.text) {
         phonet_text = phonetic.text;
       }
