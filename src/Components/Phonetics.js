@@ -5,18 +5,8 @@ import { Howl } from "howler";
 import "./Phonetics.css";
 
 export default function Phonetics(props) {
-  let phonet_text = "";
-  let phonet_audio = "";
-  {
-    props.phonetics.map(function (phonetic) {
-      if (phonetic.text) {
-        phonet_text = phonetic.text;
-      }
-      if (phonetic.audio) {
-        phonet_audio = phonetic.audio;
-      }
-    });
-  }
+  let phonet_text = props.phonetics[0].text;
+  let phonet_audio = props.phonetics[0].audio;
 
   const sound = new Howl({
     autoSuspend: true,
