@@ -1,4 +1,4 @@
-import Dictionary from "./Dictionary";
+import Dictionary from "./Components/Dictionary";
 import "./App.css";
 
 function App() {
