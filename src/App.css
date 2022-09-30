@@ -35,3 +35,10 @@ body {
 .App-footer a {
   color: var(--primary-color);
 }
+
+@media (max-width: 900px) {
+  .App {
+    margin: 0;
+    padding: 8px 4px;
+  }
+}
