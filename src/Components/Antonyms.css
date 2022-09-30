@@ -16,3 +16,7 @@
   opacity: 70%;
   margin-bottom: 4px;
 }
+
+.Antonyms:hover {
+  cursor: none;
+}

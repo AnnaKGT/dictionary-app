@@ -9,8 +9,8 @@ export default function Dictionary(props) {
   const [word, setWord] = useState(props.defaultWord);
   const [meanings, setMeanings] = useState({});
   const [photos, setPhotos] = useState(null);
-
   const [loaded, setLoaded] = useState(false);
+
   // const [allmeanings, setAllmeaning] = useState([]);
 
   function searchingDictionaryWord(response) {
