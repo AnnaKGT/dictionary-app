@@ -19,7 +19,8 @@ body {
 
 .App-header {
   font-family: "Pacifico", cursive;
-  font-size: 84px;
+  padding: 8px;
+  font-size: 32px;
   font-style: italic;
   display: flex;
   flex-direction: column;

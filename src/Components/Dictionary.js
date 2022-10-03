@@ -40,7 +40,12 @@ export default function Dictionary(props) {
     let pexelsAPICall = `https://api.pexels.com/v1/search?query=${word}&per_page=9`;
     axios
       .get(pexelsAPICall, { headers: headersPexels })
-      .then(searchingPexelWord);
+      .then(searchingPexelWord)
+      .catch((error) => {
+        return alert(
+          "Sorry, but this word is absent in the Dictionary. Try another one 🤗"
+        );
+      });
   }
 
   function searchingSubmit(event) {
@@ -59,7 +64,7 @@ export default function Dictionary(props) {
         <h2 className="dictionary__titleInput">
           What word do you want to look up?
         </h2>
-        <form onSubmit={searchingSubmit}>
+        <form className="dictionary__form" onSubmit={searchingSubmit}>
           <div className="input-group w-100">
             <input
               type="search"

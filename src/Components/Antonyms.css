@@ -1,10 +1,10 @@
 .Antonyms {
-  display: inline;
-  font-size: 16px;
+  display: inline-block;
+  font-size: 14px;
   line-height: 1;
   border: 1px solid var(--font-color);
   color: var(--font-color);
-  padding: 8px 12px;
+  padding: 4px 12px;
   margin: 0 8px 4px 0;
   border-radius: 20px;
   background-color: var(--light-background);
@@ -14,9 +14,5 @@
   font-size: 14px;
   font-weight: bold;
   opacity: 70%;
-  margin-bottom: 4px;
-}
-
-.Antonyms:hover {
-  cursor: none;
+  margin-right: 4px;
 }

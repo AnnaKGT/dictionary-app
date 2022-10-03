@@ -4,17 +4,17 @@ import "./Synonyms.css";
 export default function Synonyms(props) {
   if (props.synonyms.length > 0) {
     return (
-      <div className="mb-2">
-        <h3 className="Synomyms__title">synonyms</h3>
-        <div>
+      <div className="Synonyms__content">
+        <span className="Synonyms__title">Synonyms:</span>
+        <span>
           {props.synonyms.map(function (synonym, index) {
             return (
-              <button key={index} className="Synonyms">
+              <div key={index} className="Synonyms">
                 {synonym}
-              </button>
+              </div>
             );
           })}
-        </div>
+        </span>
       </div>
     );
   } else {
