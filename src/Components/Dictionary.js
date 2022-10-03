@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Results from "./Results.js";
 import Photos from "./Photos";
@@ -11,27 +11,34 @@ export default function Dictionary(props) {
   const [photos, setPhotos] = useState(null);
   const [loaded, setLoaded] = useState(false);
 
+  useEffect(() => {
+    setLoaded(false);
+  }, [word]);
+
   // const [allmeanings, setAllmeaning] = useState([]);
 
-  function searchingDictionaryWord(response) {
+  const searchingDictionaryWord = (response) => {
     // console.log(`Respons.data`);
     // console.log(response.data);
     // setAllmeaning(response.data);
     setMeanings(response.data[0]);
-  }
+  };
 
-  function searchingPexelWord(response) {
+  const searchingPexelWord = (response) => {
     setPhotos(response.data.photos);
-  }
+  };
 
-  function updateWord(event) {
-    setWord(event.target.value);
-  }
-
-  function search() {
+  const search = () => {
     // documentation https://dictionaryapi.dev/
     let apiCall = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
-    axios.get(apiCall).then(searchingDictionaryWord);
+    axios
+      .get(apiCall)
+      .then(searchingDictionaryWord)
+      .catch((error) => {
+        return alert(
+          "Sorry, but this word is absent in the Dictionary. Try another one 🤗"
+        );
+      });
 
     const pexelsAPIKey =
       "563492ad6f917000010000011471bb1500a341eb872ed288b6e6367a";
@@ -40,23 +47,29 @@ export default function Dictionary(props) {
     let pexelsAPICall = `https://api.pexels.com/v1/search?query=${word}&per_page=9`;
     axios
       .get(pexelsAPICall, { headers: headersPexels })
-      .then(searchingPexelWord)
-      .catch((error) => {
-        return alert(
-          "Sorry, but this word is absent in the Dictionary. Try another one 🤗"
-        );
-      });
-  }
+      .then(searchingPexelWord);
+  };
 
-  function searchingSubmit(event) {
+  let inputWord = " ";
+
+  const searchingSubmit = (event) => {
     event.preventDefault();
+    setWord(inputWord);
     search();
-  }
+  };
 
-  function load() {
+  const updateWord = (event) => {
+    inputWord = event.target.value;
+  };
+
+  const searchRelatedWord = (string) => {
+    setWord(string);
+  };
+
+  const load = () => {
     setLoaded(true);
     search();
-  }
+  };
 
   if (loaded) {
     return (
@@ -83,7 +96,11 @@ export default function Dictionary(props) {
           </div>
         </form>
 
-        <Results meanings={meanings} word={word} />
+        <Results
+          meanings={meanings}
+          word={word}
+          searchRelatedWord={searchRelatedWord}
+        />
         <Photos photos={photos} word={word} />
       </div>
     );

@@ -10,6 +10,10 @@
   background-color: var(--light-background);
 }
 
+.Synonyms:hover {
+  cursor: pointer;
+}
+
 .Synonyms__title {
   font-size: 14px;
   font-weight: bold;

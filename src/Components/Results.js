@@ -16,7 +16,11 @@ export default function Results(props) {
         {props.meanings.meanings.map(function (meaning, index) {
           return (
             <div key={index}>
-              <Meaning meaning={meaning} word={props.word} />
+              <Meaning
+                meaning={meaning}
+                word={props.word}
+                searchRelatedWord={props.searchRelatedWord}
+              />
             </div>
           );
         })}

@@ -18,8 +18,14 @@ export default function Meaning(props) {
             </p>
 
             <Example example={definition.example} word={props.word} />
-            <Synonyms synonyms={definition.synonyms} />
-            <Antonyms antonyms={definition.antonyms} />
+            <Synonyms
+              synonyms={definition.synonyms}
+              searchRelatedWord={props.searchRelatedWord}
+            />
+            <Antonyms
+              antonyms={definition.antonyms}
+              searchRelatedWord={props.searchRelatedWord}
+            />
             <hr className="Meaning__sep" />
           </div>
         );

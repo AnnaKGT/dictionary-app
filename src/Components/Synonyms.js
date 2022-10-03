@@ -8,10 +8,14 @@ export default function Synonyms(props) {
         <span className="Synonyms__title">Synonyms:</span>
         <span>
           {props.synonyms.map(function (synonym, index) {
+            function handleClick(event) {
+              event.preventDefault();
+              props.searchRelatedWord(synonym);
+            }
             return (
-              <div key={index} className="Synonyms">
+              <span key={index} className="Synonyms" onClick={handleClick}>
                 {synonym}
-              </div>
+              </span>
             );
           })}
         </span>
