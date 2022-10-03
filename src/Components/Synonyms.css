@@ -4,13 +4,15 @@
   line-height: 1;
   border: 1px solid var(--font-color);
   color: var(--font-color);
-  padding: 4px 12px;
+  padding: 4px 12px 8px;
   margin: 0 8px 4px 0;
   border-radius: 20px;
   background-color: var(--light-background);
 }
 
 .Synonyms:hover {
+  background-color: var(--font-color);
+  color: var(--light-background);
   cursor: pointer;
 }
 

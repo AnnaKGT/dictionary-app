@@ -42,11 +42,13 @@ export default function Dictionary(props) {
 
     const pexelsAPIKey =
       "563492ad6f917000010000011471bb1500a341eb872ed288b6e6367a";
-    const headersPexels = { Authorization: `Bearer ${pexelsAPIKey}` };
+    // "563492ad6f917000010000015888ae2855384a059cdc24187c49a20d";
 
     let pexelsAPICall = `https://api.pexels.com/v1/search?query=${word}&per_page=9`;
     axios
-      .get(pexelsAPICall, { headers: headersPexels })
+      .get(pexelsAPICall, {
+        headers: { Authorization: `Bearer ${pexelsAPIKey}` },
+      })
       .then(searchingPexelWord);
   };
 
