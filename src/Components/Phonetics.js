@@ -15,14 +15,10 @@ export default function Phonetics(props) {
   while (i < Object.keys(props.phonetics).length) {
     if (props.phonetics[i].text) {
       phonet_text = props.phonetics[i].text;
-    } else {
-      phonet_text = phonet_text;
     }
 
     if (props.phonetics[i].audio) {
       phonet_audio = props.phonetics[i].audio;
-    } else {
-      phonet_audio = phonet_audio;
     }
 
     i++;
