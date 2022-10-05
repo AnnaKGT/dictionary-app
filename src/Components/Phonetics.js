@@ -5,19 +5,17 @@ import { Howl } from "howler";
 import "./Phonetics.css";
 
 export default function Phonetics(props) {
-  // console.log(props);
-  // console.log(Object.keys(props.phonetics).length);
   let phonet_text = " ";
   let phonet_audio = " ";
 
   let i = 0;
 
   while (i < Object.keys(props.phonetics).length) {
-    if (props.phonetics[i].text) {
+    if (phonet_text === " " && props.phonetics[i].text) {
       phonet_text = props.phonetics[i].text;
     }
 
-    if (props.phonetics[i].audio) {
+    if (phonet_audio === " " && props.phonetics[i].audio) {
       phonet_audio = props.phonetics[i].audio;
     }
 

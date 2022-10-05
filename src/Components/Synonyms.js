@@ -7,11 +7,11 @@ export default function Synonyms(props) {
       <div className="Synonyms__content">
         <span className="Synonyms__title">Synonyms:</span>
         <span>
-          {props.synonyms.map(function (synonym, index) {
-            function handleClick(event) {
+          {props.synonyms.map((synonym, index) => {
+            const handleClick = (event) => {
               event.preventDefault();
               props.searchRelatedWord(synonym);
-            }
+            };
             return (
               <span key={index} className="Synonyms" onClick={handleClick}>
                 {synonym}
