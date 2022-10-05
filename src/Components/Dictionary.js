@@ -54,7 +54,7 @@ export default function Dictionary(props) {
 
   const searchingSubmit = (event) => {
     event.preventDefault();
-    setWord(inputWord);
+    setWord(inputWord.trim());
     search();
   };
 
