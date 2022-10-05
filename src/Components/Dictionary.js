@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Phonetics from "./Phonetics";
-import Results from "./Results.js";
 import Photos from "./Photos";
 import ResultsAll from "./ResultsAll.js";
 

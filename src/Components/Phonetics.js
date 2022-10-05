@@ -5,7 +5,6 @@ import { Howl } from "howler";
 import "./Phonetics.css";
 
 export default function Phonetics(props) {
-  console.log(props.phonetics);
   let phonet_text = " ";
   let phonet_audio = " ";
 
