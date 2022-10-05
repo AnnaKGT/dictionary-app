@@ -1,27 +1,26 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Phonetics from "./Phonetics";
 import Results from "./Results.js";
 import Photos from "./Photos";
+import ResultsAll from "./ResultsAll.js";
 
 import "./Dictionary.css";
 
 export default function Dictionary(props) {
   const [word, setWord] = useState(props.defaultWord);
-  const [meanings, setMeanings] = useState({});
+  const [phonetics, setPhonetics] = useState({});
   const [photos, setPhotos] = useState(null);
   const [loaded, setLoaded] = useState(false);
+  const [all, setAll] = useState([]);
 
   useEffect(() => {
     setLoaded(false);
   }, [word]);
 
-  // const [allmeanings, setAllmeaning] = useState([]);
-
   const searchingDictionaryWord = (response) => {
-    // console.log(`Respons.data`);
-    // console.log(response.data);
-    // setAllmeaning(response.data);
-    setMeanings(response.data[0]);
+    setAll(response.data);
+    setPhonetics(response.data[0].phonetics);
   };
 
   const searchingPexelWord = (response) => {
@@ -98,8 +97,18 @@ export default function Dictionary(props) {
           </div>
         </form>
 
-        <Results
+        <div className="Dictionary__word">
+          <h1 className="text-capitalize">{word}</h1>
+          <Phonetics phonetics={phonetics} />
+        </div>
+
+        {/* <Results
           meanings={meanings}
+          word={word}
+          searchRelatedWord={searchRelatedWord}
+        /> */}
+        <ResultsAll
+          data={all}
           word={word}
           searchRelatedWord={searchRelatedWord}
         />

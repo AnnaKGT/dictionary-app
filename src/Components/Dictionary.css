@@ -23,3 +23,15 @@
   background-color: var(--light-background);
   box-shadow: none;
 }
+
+.Dictionary__word {
+  margin: 28px 0;
+  text-align: start;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+}

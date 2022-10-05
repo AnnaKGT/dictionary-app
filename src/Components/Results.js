@@ -8,11 +8,6 @@ export default function Results(props) {
   if (Object.keys(props.meanings).length > 0) {
     return (
       <div className="Results">
-        <div className="Results__word">
-          <h1 className="text-capitalize">{props.meanings.word}</h1>
-          <Phonetics phonetics={props.meanings.phonetics} />
-        </div>
-
         {props.meanings.meanings.map(function (meaning, index) {
           return (
             <div key={index}>
