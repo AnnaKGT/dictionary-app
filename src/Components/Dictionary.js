@@ -22,7 +22,7 @@ export default function Dictionary(props) {
     setPhonetics(response.data[0].phonetics);
   };
 
-  const searchingPexelWord = (response) => {
+  const searchingImgWord = (response) => {
     setPhotos(response.data.photos);
   };
 
@@ -38,16 +38,22 @@ export default function Dictionary(props) {
         );
       });
 
-    const pexelsAPIKey =
-      "563492ad6f917000010000011471bb1500a341eb872ed288b6e6367a";
-    // "563492ad6f917000010000015888ae2855384a059cdc24187c49a20d";
+    // documentation: https://www.shecodes.io/learn/apis/images
+    let imageApiKey = "33t1cf04ea290908d2a6838o1364eb9c";
+    let imageApiUrl = `https://api.shecodes.io/images/v1/search?query=${word}&key=${imageApiKey}`;
 
-    let pexelsAPICall = `https://api.pexels.com/v1/search?query=${word}&per_page=9`;
-    axios
-      .get(pexelsAPICall, {
-        headers: { Authorization: `Bearer ${pexelsAPIKey}` },
-      })
-      .then(searchingPexelWord);
+    axios.get(imageApiUrl).then(searchingImgWord);
+
+    // const pexelsAPIKey =
+    //   "563492ad6f917000010000011471bb1500a341eb872ed288b6e6367a";
+    // // "563492ad6f917000010000015888ae2855384a059cdc24187c49a20d";
+
+    // let pexelsAPICall = `https://api.pexels.com/v1/search?query=${word}&per_page=9`;
+    // axios
+    //   .get(pexelsAPICall, {
+    //     headers: { Authorization: `Bearer ${pexelsAPIKey}` },
+    //   })
+    //   .then(searchingImgWord);
   };
 
   let inputWord = " ";
